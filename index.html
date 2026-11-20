@@ -1,0 +1,2067 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PORSCHE SEOUL EXCLUSIVE | 포르쉐 슈퍼카 공식 온라인 부티크</title>
+  <style>
+    :root {
+      --bg-deep: #050914;
+      --bg-navy: #0A1128;
+      --bg-card: #0E1733;
+      --bg-elevated: #132047;
+      --royal-blue: #1D4ED8;
+      --royal-bright: #2563EB;
+      --royal-glow: #3B82F6;
+      --royal-soft: rgba(37, 99, 235, 0.16);
+      --crest-gold: #D4AF37;
+      --crest-red: #B91C1C;
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --text-muted: #64748B;
+      --border-subtle: rgba(148, 163, 184, 0.14);
+      --border-royal: rgba(59, 130, 246, 0.38);
+      --shadow-card: 0 22px 48px -12px rgba(2, 6, 23, 0.78);
+      --transition: all 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Malgun Gothic', 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 0%, #0F1D45 0%, var(--bg-navy) 38%, var(--bg-deep) 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.55;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: #1E3A8A; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--royal-bright); }
+
+    /* Navigation Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      background: rgba(6, 11, 25, 0.84);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 14px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      color: #FFFFFF;
+    }
+
+    .brand-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: var(--royal-glow);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--royal-glow);
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-royal {
+      background: linear-gradient(135deg, var(--royal-bright), var(--royal-blue));
+      color: #FFFFFF;
+      box-shadow: 0 8px 22px rgba(29, 78, 216, 0.35);
+    }
+
+    .btn-royal:hover {
+      background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 26px rgba(37, 99, 235, 0.48);
+    }
+
+    .btn-outline {
+      background: rgba(15, 26, 56, 0.65);
+      color: var(--text-primary);
+      border-color: var(--border-subtle);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--royal-glow);
+      background: rgba(29, 78, 216, 0.18);
+    }
+
+    .member-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px;
+      background: linear-gradient(90deg, rgba(15, 26, 56, 0.9), rgba(29, 78, 216, 0.25));
+      border: 1px solid var(--border-royal);
+      border-radius: 999px;
+      font-size: 0.82rem;
+      cursor: pointer;
+    }
+
+    .tier-badge {
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      background: var(--royal-blue);
+      color: #FFFFFF;
+    }
+
+    .tier-badge.GOLD, .tier-badge.ROYAL { background: linear-gradient(135deg, #1D4ED8, #3B82F6); }
+    .tier-badge.PLATINUM { background: linear-gradient(135deg, #334155, #64748B); }
+    .tier-badge.VIP { background: linear-gradient(135deg, #B45309, #D4AF37); color: #050914; }
+
+    .badge-count {
+      background: var(--royal-bright);
+      color: #FFFFFF;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 1px 7px;
+      border-radius: 999px;
+    }
+
+    /* Hero Cross-Fade Slider */
+    .hero-section {
+      position: relative;
+      height: 640px;
+      max-height: 78vh;
+      width: 100%;
+      overflow: hidden;
+      background: var(--bg-deep);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1.1s ease-in-out, transform 6s ease-out;
+      transform: scale(1.04);
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    .hero-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.88);
+    }
+
+    .hero-vignette {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(5, 9, 20, 0.92) 0%, rgba(10, 17, 40, 0.56) 48%, rgba(5, 9, 20, 0.25) 100%),
+                  linear-gradient(to top, var(--bg-navy) 0%, transparent 32%);
+      z-index: 3;
+    }
+
+    .hero-content-wrap {
+      position: relative;
+      z-index: 4;
+      max-width: 1360px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(29, 78, 216, 0.24);
+      border: 1px solid rgba(96, 165, 250, 0.4);
+      color: #93C5FD;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 4.4vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.14;
+      letter-spacing: -0.02em;
+      max-width: 680px;
+      margin-bottom: 16px;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-desc {
+      color: #CBD5E1;
+      font-size: 1.04rem;
+      max-width: 560px;
+      margin-bottom: 30px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-controls {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 5;
+      width: 100%;
+      max-width: 1360px;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero-dots {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-dot {
+      width: 44px;
+      height: 4px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.22);
+      cursor: pointer;
+      overflow: hidden;
+      position: relative;
+      border: none;
+    }
+
+    .hero-dot.active {
+      background: rgba(59, 130, 246, 0.35);
+    }
+
+    .hero-dot.active::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #60A5FA;
+      animation: slideProgress 5s linear forwards;
+    }
+
+    @keyframes slideProgress {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(0); }
+    }
+
+    .hero-arrows {
+      display: flex;
+      gap: 10px;
+    }
+
+    .arrow-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(10, 17, 40, 0.72);
+      border: 1px solid var(--border-subtle);
+      color: #FFFFFF;
+      font-size: 1.2rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+
+    .arrow-btn:hover {
+      background: var(--royal-blue);
+      border-color: var(--royal-glow);
+    }
+
+    /* Section Layout */
+    .section {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 76px 28px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 38px;
+    }
+
+    .section-eyebrow {
+      color: var(--royal-glow);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    /* Filter Bar */
+    .filter-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 32px;
+      padding: 14px 18px;
+      background: rgba(14, 23, 51, 0.72);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-tab {
+      padding: 8px 16px;
+      border-radius: 8px;
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-secondary);
+      font-size: 0.86rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .filter-tab:hover {
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .filter-tab.active {
+      background: var(--royal-blue);
+      color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.4);
+    }
+
+    .sort-select {
+      background: var(--bg-navy);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    /* Supercar Grid & Seamless Blended Price Tag */
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+      gap: 28px;
+    }
+
+    .car-card {
+      background: linear-gradient(180deg, #0C1530 0%, #0A1128 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .car-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-royal);
+      box-shadow: 0 28px 56px -12px rgba(29, 78, 216, 0.28);
+    }
+
+    .car-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #0A1128;
+    }
+
+    .car-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+      display: block;
+    }
+
+    .car-card:hover .car-media img {
+      transform: scale(1.05);
+    }
+
+    /* Seamless gradient feathering at bottom of image so price tag melts naturally into photo */
+    .car-media::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 55%;
+      background: linear-gradient(to top, #0A1128 0%, rgba(10, 17, 40, 0.72) 42%, transparent 100%);
+      pointer-events: none;
+    }
+
+    .car-series-pill {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      z-index: 3;
+      padding: 5px 11px;
+      border-radius: 6px;
+      background: rgba(10, 17, 40, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #93C5FD;
+    }
+
+    /* SIGNATURE PORSCHE CREST + KRW SEAMLESS BLENDED PRICE TAG */
+    .porsche-price-tag {
+      position: relative;
+      z-index: 4;
+      margin: -34px 16px 0 16px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      /* Naturally blends into the dark-navy studio tone of the car image rather than harsh contrast */
+      background: linear-gradient(90deg, rgba(10, 17, 40, 0.90) 0%, rgba(15, 27, 61, 0.76) 58%, rgba(29, 78, 216, 0.22) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      box-shadow: 0 10px 25px rgba(5, 9, 20, 0.45);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .crest-wrap {
+      flex-shrink: 0;
+      width: 34px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55));
+    }
+
+    .price-divider {
+      width: 1px;
+      height: 32px;
+      background: linear-gradient(180deg, transparent, rgba(203, 213, 225, 0.26), transparent);
+      flex-shrink: 0;
+    }
+
+    .price-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .price-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .price-caption {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: #94A3B8;
+      font-weight: 600;
+    }
+
+    .price-points-pill {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: #60A5FA;
+      background: rgba(37, 99, 235, 0.16);
+      padding: 2px 7px;
+      border-radius: 999px;
+    }
+
+    .price-krw-main {
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: #F8FAFC;
+      letter-spacing: -0.01em;
+      font-variant-numeric: tabular-nums;
+      margin-top: 1px;
+    }
+
+    .price-krw-sub {
+      font-size: 0.74rem;
+      color: #CBD5E1;
+      opacity: 0.85;
+    }
+
+    .car-body {
+      padding: 18px 20px 22px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .car-name {
+      font-size: 1.24rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+
+    .car-tagline {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+    }
+
+    .spec-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      padding: 12px;
+      background: rgba(6, 11, 25, 0.62);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-radius: 10px;
+      margin-bottom: 18px;
+    }
+
+    .spec-item {
+      text-align: center;
+    }
+
+    .spec-val {
+      font-size: 0.96rem;
+      font-weight: 800;
+      color: #E2E8F0;
+    }
+
+    .spec-lbl {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .car-actions {
+      margin-top: auto;
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 10px;
+    }
+
+    /* Membership Tiers Section */
+    .membership-band {
+      background: linear-gradient(180deg, rgba(14, 23, 51, 0.5) 0%, rgba(10, 17, 40, 0.95) 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .tier-card {
+      background: rgba(10, 17, 40, 0.85);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 24px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .tier-card.active-tier {
+      border-color: var(--royal-glow);
+      box-shadow: 0 0 0 1px var(--royal-glow), 0 18px 40px rgba(29, 78, 216, 0.25);
+    }
+
+    .tier-rate {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #60A5FA;
+      margin: 10px 0 4px 0;
+    }
+
+    .tier-perks {
+      list-style: none;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
+    .tier-perks li::before {
+      content: '✦ ';
+      color: var(--royal-glow);
+    }
+
+    /* Digital Vault (Instant E-Book / Owner's Manual Delivery) */
+    .vault-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .vault-card {
+      background: linear-gradient(135deg, #0E1836, #0A1128);
+      border: 1px solid var(--border-royal);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .vault-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 46px 24px;
+      border: 1px dashed rgba(148, 163, 184, 0.25);
+      border-radius: 16px;
+      color: var(--text-secondary);
+    }
+
+    /* Slide-over Cart Drawer */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .drawer-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -480px;
+      width: 100%;
+      max-width: 460px;
+      height: 100vh;
+      background: #091024;
+      border-left: 1px solid var(--border-royal);
+      z-index: 1010;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: -20px 0 50px rgba(0, 0, 0, 0.7);
+    }
+
+    .cart-drawer.open {
+      right: 0;
+    }
+
+    .drawer-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cart-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cart-item img {
+      width: 84px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .drawer-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border-subtle);
+      background: #070C1C;
+    }
+
+    .pay-mode-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .mode-btn {
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-navy);
+      color: var(--text-secondary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .mode-btn.active {
+      border-color: var(--royal-glow);
+      background: rgba(37, 99, 235, 0.22);
+      color: #FFFFFF;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.8);
+      backdrop-filter: blur(8px);
+      z-index: 1100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-box {
+      background: #0B132B;
+      border: 1px solid var(--border-royal);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 640px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 28px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      color: #FFFFFF;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 10px;
+      background: #060B19;
+      border: 1px solid var(--border-subtle);
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--royal-glow);
+    }
+
+    /* Digital E-Book / Certificate Reader Tabs */
+    .ebook-tabs {
+      display: flex;
+      gap: 8px;
+      margin: 16px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 10px;
+    }
+
+    .ebook-tab {
+      padding: 7px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: none;
+      color: var(--text-secondary);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .ebook-tab.active {
+      background: var(--royal-blue);
+      color: #FFFFFF;
+    }
+
+    .ebook-page {
+      background: linear-gradient(145deg, #0E1938, #070D1F);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 14px;
+      padding: 24px;
+      color: #E2E8F0;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      z-index: 1300;
+      background: linear-gradient(135deg, #1E3A8A, #0F172A);
+      border: 1px solid var(--royal-glow);
+      color: #FFFFFF;
+      padding: 14px 20px;
+      border-radius: 12px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transform: translateY(120px);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background: #040711;
+      padding: 44px 28px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .car-grid { grid-template-columns: 1fr; }
+      .hero-section { height: 540px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reusable SVG Porsche Official Crest Definition -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <g id="porsche-crest-svg">
+        <!-- Outer Gold Shield -->
+        <path d="M50 4 L92 16 L88 64 C84 86 68 104 50 116 C32 104 16 86 12 64 L8 16 Z" fill="#D4AF37" stroke="#FDE68A" stroke-width="2.5"/>
+        <!-- Inner Shield Field -->
+        <path d="M50 9 L86 20 L83 62 C79 81 65 97 50 108 C35 97 21 81 17 62 L14 20 Z" fill="#111827"/>
+        <!-- Top Gold Banner -->
+        <path d="M15 20 L85 20 L84 31 L16 31 Z" fill="#D4AF37"/>
+        <text x="50" y="28" text-anchor="middle" font-size="8.5" font-weight="900" fill="#090D16" font-family="Arial, sans-serif" letter-spacing="1.2">PORSCHE</text>
+        <!-- Quadrant 1 (Top Left): Gold with Antlers -->
+        <rect x="18" y="33" width="31" height="28" fill="#D4AF37"/>
+        <path d="M22 40 H45 M22 47 H45 M22 54 H45" stroke="#111827" stroke-width="2.4" stroke-linecap="round"/>
+        <!-- Quadrant 2 (Top Right): Red & Black Stripes -->
+        <rect x="51" y="33" width="31" height="28" fill="#B91C1C"/>
+        <rect x="51" y="40" width="31" height="6" fill="#111827"/>
+        <rect x="51" y="52" width="31" height="6" fill="#111827"/>
+        <!-- Quadrant 3 (Bottom Left): Red & Black Stripes -->
+        <path d="M18 63 H49 V98 C35 89 23 77 18 63 Z" fill="#B91C1C"/>
+        <rect x="20" y="70" width="29" height="6" fill="#111827"/>
+        <rect x="26" y="82" width="23" height="6" fill="#111827"/>
+        <!-- Quadrant 4 (Bottom Right): Gold with Antlers -->
+        <path d="M51 63 H82 C77 77 65 89 51 98 Z" fill="#D4AF37"/>
+        <path d="M54 71 H76 M54 79 H71 M54 87 H64" stroke="#111827" stroke-width="2.4" stroke-linecap="round"/>
+        <!-- Center Stuttgart Escutcheon Shield -->
+        <path d="M38 48 L62 48 L60 68 C58 76 54 81 50 85 C46 81 42 76 40 68 Z" fill="#D4AF37" stroke="#111827" stroke-width="2"/>
+        <!-- Prancing Horse Silhouette -->
+        <path d="M47 75 L48 65 L44 61 L48 56 L53 55 L55 59 L52 63 L54 75 Z" fill="#111827"/>
+      </g>
+    </defs>
+  </svg>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <svg width="34" height="42" viewBox="0 0 100 120">
+          <use href="#porsche-crest-svg"></use>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-title">PORSCHE</span>
+          <span class="brand-sub">SEOUL EXCLUSIVE STORE</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#models">모델 라인업</a>
+        <a href="#membership">멤버십 &amp; 포인트</a>
+        <a href="#digital-vault">디지털 오너스 북</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div id="memberArea"></div>
+        <button class="btn btn-outline" onclick="scrollToVault()">
+          디지털 북 <span class="badge-count" id="vaultCount">0</span>
+        </button>
+        <button class="btn btn-royal" onclick="toggleCart(true)">
+          차고 / 결제 <span class="badge-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Slider (4 Cross-Fading Images) -->
+  <section class="hero-section" id="heroSlider">
+    <div class="hero-slide active">
+      <img src="./img/hero1.jpg" alt="Porsche 911 GT3 RS Weissach" />
+      <div class="hero-vignette"></div>
+      <div class="hero-content-wrap">
+        <span class="hero-kicker">TRACK BRED · 992 GENERATION</span>
+        <h1 class="hero-title">Porsche 911 GT3 RS<br/>트랙의 본능을 깨우다</h1>
+        <p class="hero-desc">자연흡기 4.0L 박서 엔진 525 PS와 액티브 에어로다이내믹스 DRS. 지금 온라인 예약 시 전용 디지털 오너스 매뉴얼과 최대 5% 포인트를 즉시 지급합니다.</p>
+        <div class="hero-cta-group">
+          <a href="#models" class="btn btn-royal">전체 라인업 &amp; 한화 가격표 보기</a>
+          <button class="btn btn-outline" onclick="openSpecModal(1)">911 GT3 RS 상세 스펙</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="./img/hero2.jpg" alt="Porsche Taycan Turbo GT" />
+      <div class="hero-vignette"></div>
+      <div class="hero-content-wrap">
+        <span class="hero-kicker">E-PERFORMANCE · 1,034 PS</span>
+        <h1 class="hero-title">Porsche Taycan Turbo GT<br/>전동화 퍼포먼스의 정점</h1>
+        <p class="hero-desc">정지 상태에서 100km/h까지 단 2.2초. 어택 모드와 로열 블루 에어로 블레이드가 완성하는 순수 전기 슈퍼 세단.</p>
+        <div class="hero-cta-group">
+          <a href="#models" class="btn btn-royal">타이칸 Turbo GT 주문하기</a>
+          <button class="btn btn-outline" onclick="openSpecModal(3)">상세 엔지니어링 스펙</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="./img/hero3.jpg" alt="Porsche 918 Spyder Heritage" />
+      <div class="hero-vignette"></div>
+      <div class="hero-content-wrap">
+        <span class="hero-kicker">HYPERCAR ARCHIVE · WEISSACH</span>
+        <h1 class="hero-title">Porsche 918 Spyder<br/>하이퍼카 헤리티지 컬렉션</h1>
+        <p class="hero-desc">887 PS V8 하이브리드 파워트레인과 풀 카본 모노코크 섀시. 인증 컬렉터 전용 인증서 및 기술 아카이브 북 즉시 배포.</p>
+        <div class="hero-cta-group">
+          <a href="#models" class="btn btn-royal">컬렉션 라인업 확인</a>
+          <button class="btn btn-outline" onclick="openSpecModal(6)">918 Spyder 상세 보기</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-slide">
+      <img src="./img/car_911_turbos.jpg" alt="Porsche 911 Turbo S" />
+      <div class="hero-vignette"></div>
+      <div class="hero-content-wrap">
+        <span class="hero-kicker">ICONIC FLAGSHIP · AWD</span>
+        <h1 class="hero-title">Porsche 911 Turbo S<br/>일상과 서킷을 지배하는 플래그십</h1>
+        <p class="hero-desc">650 PS 트윈터보 수평대향 6기통 엔진과 포르쉐 트랙션 매니지먼트. 로열 블루 메탈릭 에디션 즉시 계약 가능.</p>
+        <div class="hero-cta-group">
+          <a href="#models" class="btn btn-royal">911 Turbo S 구성하기</a>
+          <button class="btn btn-outline" onclick="openAuthModal()">멤버십 가입 (150만 P 증정)</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-controls">
+      <div class="hero-dots" id="heroDots">
+        <button class="hero-dot active" onclick="goSlide(0)" aria-label="Slide 1"></button>
+        <button class="hero-dot" onclick="goSlide(1)" aria-label="Slide 2"></button>
+        <button class="hero-dot" onclick="goSlide(2)" aria-label="Slide 3"></button>
+        <button class="hero-dot" onclick="goSlide(3)" aria-label="Slide 4"></button>
+      </div>
+      <div class="hero-arrows">
+        <button class="arrow-btn" onclick="prevSlide()" aria-label="이전 슬라이드">&#8249;</button>
+        <button class="arrow-btn" onclick="nextSlide()" aria-label="다음 슬라이드">&#8250;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Supercar Catalog Section -->
+  <section class="section" id="models">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">PORSCHE KOREA LINEUP &amp; KRW PRICING</div>
+        <h2 class="section-title">포르쉐 슈퍼카 컬렉션</h2>
+      </div>
+      <p style="color: var(--text-secondary); font-size: 0.9rem; max-width: 440px;">
+        모든 차량 가격표는 포르쉐 공식 크레스트 마크와 함께 한화(KRW) 권장소비자가격으로 안내되며, 결제 즉시 디지털 오너스 매뉴얼과 인증서가 발급됩니다.
+      </p>
+    </div>
+
+    <div class="filter-toolbar">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-tab active" data-cat="ALL" onclick="setCategory('ALL', this)">전체 모델 (6)</button>
+        <button class="filter-tab" data-cat="911" onclick="setCategory('911', this)">911 시리즈</button>
+        <button class="filter-tab" data-cat="TAYCAN" onclick="setCategory('TAYCAN', this)">타이칸 (E-Performance)</button>
+        <button class="filter-tab" data-cat="718" onclick="setCategory('718', this)">718 미드십</button>
+        <button class="filter-tab" data-cat="GT_HYPER" onclick="setCategory('GT_HYPER', this)">파나메라 &amp; 하이퍼카</button>
+      </div>
+      <select class="sort-select" id="sortSelect" onchange="renderCars()">
+        <option value="default">추천 모델순</option>
+        <option value="price-asc">한화 가격 낮은순</option>
+        <option value="price-desc">한화 가격 높은순</option>
+        <option value="power-desc">최고출력순 (PS)</option>
+      </select>
+    </div>
+
+    <div class="car-grid" id="carGrid"></div>
+  </section>
+
+  <!-- Membership Tiers & Point Rewards Section -->
+  <section class="membership-band" id="membership">
+    <div class="section">
+      <div class="section-header">
+        <div>
+          <div class="section-eyebrow">PORSCHE EXCLUSIVE MEMBERSHIP &amp; POINTS</div>
+          <h2 class="section-title">회원 등급별 포인트 적립 제도</h2>
+        </div>
+        <button class="btn btn-royal" onclick="openAuthModal()">회원가입 / 등급 확인하기</button>
+      </div>
+
+      <div class="tier-grid" id="tierGrid"></div>
+    </div>
+  </section>
+
+  <!-- Instant Digital Owner's E-Book & Certificate Vault -->
+  <section class="section" id="digital-vault">
+    <div class="section-header">
+      <div>
+        <div class="section-eyebrow">INSTANT DIGITAL DELIVERY · E-BOOK &amp; CERTIFICATE</div>
+        <h2 class="section-title">My 디지털 오너스 북 보관함</h2>
+      </div>
+      <span style="color: #93C5FD; font-size: 0.85rem; font-weight: 600;">
+        ✦ 차량 예약/결제 완료 즉시 공식 디지털 매뉴얼과 오더 인증서가 배포됩니다
+      </span>
+    </div>
+
+    <div class="vault-grid" id="vaultGrid"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <strong style="color:#F8FAFC; letter-spacing:0.14em;">PORSCHE SEOUL EXCLUSIVE STORE</strong>
+        <p style="margin-top:6px;">포르쉐 슈퍼카 온라인 쇼룸 &amp; 디지털 오너스 아카이브 · 모든 가격은 한화(KRW, VAT 포함) 기준입니다.</p>
+      </div>
+      <div>
+        <p>고객 컨시어지 센터: 02-1588-0911 · Stuttgart / Seoul</p>
+        <p style="margin-top:4px;">© 2026 Porsche Exclusive Boutique Demo. Ready for GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-over Cart & Checkout Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleCart(false)"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <div>
+        <h3 style="font-size:1.1rem; font-weight:800;">나의 포르쉐 차고 (결제)</h3>
+        <p style="font-size:0.78rem; color:var(--text-secondary);">결제 즉시 디지털 오너스 북 &amp; 포인트 지급</p>
+      </div>
+      <button class="btn btn-outline" style="padding:6px 12px;" onclick="toggleCart(false)">닫기 ✕</button>
+    </div>
+
+    <div class="drawer-body" id="cartItemsContainer"></div>
+
+    <div class="drawer-footer">
+      <div class="pay-mode-toggle">
+        <button class="mode-btn active" id="modeDeposit" onclick="setPayMode('deposit')">계약금 결제 (10% 예약)</button>
+        <button class="mode-btn" id="modeFull" onclick="setPayMode('full')">일시불 전액 결제 (100%)</button>
+      </div>
+
+      <div class="form-group" style="margin-bottom:12px;">
+        <div style="display:flex; justify-content:space-between; font-size:0.78rem; margin-bottom:4px;">
+          <span style="color:var(--text-secondary);">보유 포인트 사용</span>
+          <span style="color:#60A5FA; font-weight:700;" id="availablePointsLabel">0 P 보유</span>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <input type="number" id="usePointsInput" class="form-control" placeholder="사용할 포인트 입력" min="0" step="10000" oninput="updateCartSummary()" />
+          <button class="btn btn-outline" style="padding:8px 12px; font-size:0.78rem;" onclick="applyAllPoints()">전액 사용</button>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px; font-size:0.85rem; margin-bottom:14px; padding-top:10px; border-top:1px solid var(--border-subtle);">
+        <div style="display:flex; justify-content:space-between; color:var(--text-secondary);">
+          <span>선택 결제 기준 금액</span>
+          <span id="subtotalText">₩ 0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; color:#93C5FD;">
+          <span>포인트 할인</span>
+          <span id="discountText">- ₩ 0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:1.08rem; font-weight:800; color:#FFFFFF; margin-top:4px;">
+          <span>최종 결제 금액 (KRW)</span>
+          <span id="finalTotalText">₩ 0</span>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:0.78rem; color:#60A5FA;">
+          <span>결제 시 즉시 적립 포인트 (<span id="earnRateText">1%</span>)</span>
+          <span id="earnPointsText">+ 0 P</span>
+        </div>
+      </div>
+
+      <button class="btn btn-royal" style="width:100%; padding:13px;" onclick="openCheckoutModal()">
+        결제 진행 및 디지털 북 즉시 발급
+      </button>
+    </div>
+  </aside>
+
+  <!-- Modal 1: Auth (Sign Up / Login) -->
+  <div class="modal-overlay" id="authModal">
+    <div class="modal-box" style="max-width:460px;">
+      <button class="modal-close" onclick="closeModal('authModal')">✕</button>
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+        <svg width="28" height="34" viewBox="0 0 100 120"><use href="#porsche-crest-svg"></use></svg>
+        <div>
+          <h3 style="font-size:1.15rem; font-weight:800;">PORSCHE EXCLUSIVE 멤버십</h3>
+          <p style="font-size:0.78rem; color:#93C5FD;">신규 가입 즉시 웰컴 1,500,000 P 지급</p>
+        </div>
+      </div>
+
+      <div id="authLoggedInView" style="display:none;">
+        <div style="background:rgba(29,78,216,0.16); border:1px solid var(--border-royal); border-radius:12px; padding:16px; margin-bottom:16px;">
+          <p style="font-size:0.82rem; color:var(--text-secondary);">현재 로그인된 멤버</p>
+          <h4 id="profileName" style="font-size:1.15rem; font-weight:800; margin:4px 0;"></h4>
+          <p id="profileEmail" style="font-size:0.82rem; color:var(--text-secondary);"></p>
+          <div style="display:flex; justify-content:space-between; margin-top:12px; padding-top:12px; border-top:1px solid var(--border-subtle);">
+            <span>회원 등급: <strong id="profileTier" style="color:#60A5FA;"></strong></span>
+            <span>보유 포인트: <strong id="profilePoints" style="color:#F8FAFC;"></strong></span>
+          </div>
+          <p style="font-size:0.78rem; color:var(--text-secondary); margin-top:6px;">
+            누적 구매 금액: <span id="profileSpent">₩ 0</span>
+          </p>
+        </div>
+        <button class="btn btn-outline" style="width:100%;" onclick="logoutUser()">로그아웃</button>
+      </div>
+
+      <form id="authForm" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label>성함 (오너 이름)</label>
+          <input type="text" id="regName" class="form-control" placeholder="예: 김포르쉐" required />
+        </div>
+        <div class="form-group">
+          <label>이메일 주소</label>
+          <input type="email" id="regEmail" class="form-control" placeholder="owner@porsche-seoul.kr" required />
+        </div>
+        <div class="form-group">
+          <label>비밀번호</label>
+          <input type="password" id="regPass" class="form-control" placeholder="••••••••" required />
+        </div>
+        <div class="form-group">
+          <label>시작 멤버십 등급 선택 (체험용)</label>
+          <select id="regTier" class="form-control">
+            <option value="SILVER">SILVER CLUB (기본 1.0% 적립)</option>
+            <option value="ROYAL" selected>ROYAL BLUE CLUB (2.0% 적립)</option>
+            <option value="PLATINUM">PLATINUM RS (3.5% 적립)</option>
+            <option value="VIP">WEISSACH VIP (5.0% 적립)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-royal" style="width:100%; margin-top:6px;">
+          회원가입 완료 및 1,500,000 P 받기
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal 2: Vehicle Detail Spec & Price Tag Preview -->
+  <div class="modal-overlay" id="specModal">
+    <div class="modal-box" id="specModalContent"></div>
+  </div>
+
+  <!-- Modal 3: Checkout Payment Modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-box" style="max-width:500px;">
+      <button class="modal-close" onclick="closeModal('checkoutModal')">✕</button>
+      <h3 style="font-size:1.2rem; font-weight:800; margin-bottom:6px;">포르쉐 공식 온라인 결제</h3>
+      <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:18px;">
+        결제 완료 즉시 공식 오더 인증서와 디지털 오너스 매뉴얼(E-Book)이 배포됩니다.
+      </p>
+
+      <div style="background:rgba(14,23,51,0.9); border:1px solid var(--border-subtle); border-radius:12px; padding:16px; margin-bottom:16px;">
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="color:var(--text-secondary); font-size:0.85rem;">결제 방식 구분</span>
+          <strong id="chkPayMode" style="color:#93C5FD; font-size:0.85rem;"></strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; margin-bottom:8px;">
+          <span style="color:var(--text-secondary); font-size:0.85rem;">최종 한화 결제액</span>
+          <strong id="chkFinalKrw" style="font-size:1.15rem; color:#FFFFFF;"></strong>
+        </div>
+        <div style="display:flex; justify-content:space-between;">
+          <span style="color:var(--text-secondary); font-size:0.85rem;">적립 예정 포인트</span>
+          <strong id="chkEarnPts" style="color:#60A5FA; font-size:0.9rem;"></strong>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>결제 수단 선택</label>
+        <select id="payMethod" class="form-control">
+          <option value="포르쉐 파이낸셜 서비스 카드">포르쉐 파이낸셜 서비스 전용 카드 (무이자 36개월)</option>
+          <option value="에스크로 가상계좌 이체">우리/하나은행 에스크로 가상계좌 이체</option>
+          <option value="프리미엄 간편결제">프리미엄 간편결제 (Apple Pay / 삼성페이)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>인도 희망 센터</label>
+        <select id="deliveryCenter" class="form-control">
+          <option value="포르쉐 스튜디오 청담">포르쉐 스튜디오 청담 (서울 강남구)</option>
+          <option value="포르쉐 센터 판교">포르쉐 센터 판교 (경기 성남시)</option>
+          <option value="포르쉐 센터 해운대">포르쉐 센터 해운대 (부산 해운대구)</option>
+        </select>
+      </div>
+
+      <button class="btn btn-royal" style="width:100%; padding:13px; margin-top:8px;" onclick="completePayment()">
+        결제 확정 및 디지털 북 즉시 배포받기
+      </button>
+    </div>
+  </div>
+
+  <!-- Modal 4: Instant Digital E-Book & Owner's Certificate Reader -->
+  <div class="modal-overlay" id="readerModal">
+    <div class="modal-box" style="max-width:720px;">
+      <button class="modal-close" onclick="closeModal('readerModal')">✕</button>
+      <div id="readerModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // 1. Porsche Supercar Catalog Data (KRW Prices)
+    const CARS = [
+      {
+        id: 1,
+        name: "Porsche 911 GT3 RS",
+        series: "911",
+        seriesLabel: "911 · TRACK RS",
+        tagline: "4.0L 자연흡기 박서 6기통 · DRS 액티브 에어로다이내믹스",
+        priceKrw: 365800000,
+        priceKoreanUnit: "3억 6,580만 원",
+        power: "525 PS",
+        zeroToHundred: "3.2 초",
+        topSpeed: "296 km/h",
+        engine: "3,996 cc 수평대향 6기통 자연흡기 (9,000 rpm)",
+        transmission: "7단 포르쉐 더블 클러치 (PDK)",
+        img: "./img/car_911_gt3rs.jpg",
+        ebookSummary: "모터스포츠 기술이 집약된 992 세대 911 GT3 RS 공식 엔지니어링 매뉴얼입니다. 스완넥 리어 윙 DRS 제어 로직, PASM 트랙 서스펜션 세팅 가이드 및 뉘르부르크링 텔레메트리 데이터를 포함합니다."
+      },
+      {
+        id: 2,
+        name: "Porsche 911 Turbo S",
+        series: "911",
+        seriesLabel: "911 · FLAGSHIP",
+        tagline: "3.7L 트윈터보 수평대향 6기통 · PTM 사륜구동 플래그십",
+        priceKrw: 308400000,
+        priceKoreanUnit: "3억 840만 원",
+        power: "650 PS",
+        zeroToHundred: "2.7 초",
+        topSpeed: "330 km/h",
+        engine: "3,745 cc VTG 트윈터보 수평대향 6기통",
+        transmission: "8단 포르쉐 더블 클러치 (PDK) · AWD",
+        img: "./img/car_911_turbos.jpg",
+        ebookSummary: "전천후 슈퍼카의 기준인 911 Turbo S의 오너스 가이드북입니다. 가변 터빈 지오메트리(VTG) 관리법, PCCB 세라믹 브레이크 길들이기 및 스포츠 크로노 런치 컨트롤 매뉴얼을 제공합니다."
+      },
+      {
+        id: 3,
+        name: "Porsche Taycan Turbo GT",
+        series: "TAYCAN",
+        seriesLabel: "TAYCAN · E-PERFORMANCE",
+        tagline: "1,034 PS 어택 모드 · 실리콘 카바이드 펄스 인버터",
+        priceKrw: 296100000,
+        priceKoreanUnit: "2억 9,610만 원",
+        power: "1,034 PS",
+        zeroToHundred: "2.2 초",
+        topSpeed: "305 km/h",
+        engine: "듀얼 영구자석 동기 모터 · 800V 아키텍처",
+        transmission: "2단 퍼포먼스 트랜스미션 · AWD",
+        img: "./img/car_taycan_turbogt.jpg",
+        ebookSummary: "포르쉐 양산차 역사상 가장 강력한 전기 스포츠카 Taycan Turbo GT의 디지털 기술 북입니다. 10초간 120kW 추가 출력을 발휘하는 어택 모드(Attack Mode)와 800V 초급속 배터리 열관리 시스템을 다룹니다."
+      },
+      {
+        id: 4,
+        name: "Porsche 718 Cayman GT4 RS",
+        series: "718",
+        seriesLabel: "718 · MID-ENGINE RS",
+        tagline: "미드십 4.0L 고회전 자연흡기 · 실내 카본 에어 인테이크",
+        priceKrw: 221500000,
+        priceKoreanUnit: "2억 2,150만 원",
+        power: "500 PS",
+        zeroToHundred: "3.4 초",
+        topSpeed: "315 km/h",
+        engine: "3,996 cc 미드십 수평대향 6기통 자연흡기",
+        transmission: "7단 포르쉐 더블 클러치 (PDK)",
+        img: "./img/car_718_gt4rs.jpg",
+        ebookSummary: "완벽한 미드십 밸런스를 자랑하는 718 Cayman GT4 RS 공식 핸드북입니다. 운전석 바로 뒤 프로세스 에어 인테이크 어쿠스틱 튜닝과 수동 조절식 캠버/안티롤바 세팅 표가 수록되어 있습니다."
+      },
+      {
+        id: 5,
+        name: "Panamera Turbo E-Hybrid",
+        series: "GT_HYPER",
+        seriesLabel: "PANAMERA · EXECUTIVE GT",
+        tagline: "4.0L V8 트윈터보 하이브리드 · 포르쉐 액티브 라이드",
+        priceKrw: 264900000,
+        priceKoreanUnit: "2억 6,490만 원",
+        power: "680 PS",
+        zeroToHundred: "3.2 초",
+        topSpeed: "315 km/h",
+        engine: "3,996 cc V8 트윈터보 + 140kW 전기 모터",
+        transmission: "8단 PDK · 포르쉐 액티브 라이드 서스펜션",
+        img: "./img/car_panamera_turbo.jpg",
+        ebookSummary: "럭셔리 퍼포먼스 세단 Panamera Turbo E-Hybrid의 컨시어지 디지털 북입니다. 차체 롤링과 피칭을 능동 제어하는 포르쉐 액티브 라이드(Porsche Active Ride) 및 E-하이브리드 주행 모드 전략을 안내합니다."
+      },
+      {
+        id: 6,
+        name: "Porsche 918 Spyder Weissach",
+        series: "GT_HYPER",
+        seriesLabel: "HYPERCAR · LIMITED HERITAGE",
+        tagline: "887 PS V8 하이브리드 하이퍼카 · 풀 카본 모노코크",
+        priceKrw: 1450000000,
+        priceKoreanUnit: "14억 5,000만 원",
+        power: "887 PS",
+        zeroToHundred: "2.6 초",
+        topSpeed: "345 km/h",
+        engine: "4,593 cc 고회전 V8 + 듀얼 하이브리드 모터",
+        transmission: "7단 PDK · 마그네슘 휠 바이작 패키지",
+        img: "./img/car_918_spyder.jpg",
+        ebookSummary: "전 세계 918대 한정 생산된 포르쉐 하이퍼카 918 Spyder 바이작 패키지의 공식 컬렉터 아카이브 북입니다. 상단 배기 시스템 열관리, 카본 파이버 섀시 인증서 및 전용 메인터넌스 스케줄을 포함합니다."
+      }
+    ];
+
+    const TIERS = {
+      SILVER: { name: "SILVER CLUB", rate: 0.01, rateLabel: "1.0%", minSpent: 0, perks: ["차량 결제 금액 1.0% 포인트 적립", "디지털 오너스 매뉴얼 즉시 열람", "포르쉐 뉴스레터 & 신차 프리뷰"] },
+      ROYAL: { name: "ROYAL BLUE CLUB", rate: 0.02, rateLabel: "2.0%", minSpent: 100000000, perks: ["차량 결제 금액 2.0% 포인트 적립", "인제 스피디움 트랙 데이 우선 초청", "전용 컨시어지 핫라인 & 무상 픽업"] },
+      PLATINUM: { name: "PLATINUM RS", rate: 0.035, rateLabel: "3.5%", minSpent: 300000000, perks: ["차량 결제 금액 3.5% 포인트 적립", "익스클루시브 매뉴팩처 1:1 비스포크", "연 2회 디테일링 & 트랙 인스펙션"] },
+      VIP: { name: "WEISSACH VIP", rate: 0.05, rateLabel: "5.0%", minSpent: 500000000, perks: ["차량 결제 금액 5.0% 최고율 적립", "독일 슈투트가르트 박물관 VIP 초청", "한정판 GT / 헤리티지 모델 우선 배정"] }
+    };
+
+    // 2. Persistent State (localStorage)
+    let state = JSON.parse(localStorage.getItem("porsche_mall_state") || "null") || {
+      user: {
+        name: "김도윤 오너",
+        email: "vip@porsche-seoul.kr",
+        tier: "ROYAL",
+        points: 1500000,
+        totalSpent: 120000000
+      },
+      cart: [1],
+      payMode: "deposit",
+      unlockedBooks: []
+    };
+
+    let currentCategory = "ALL";
+    let currentSlide = 0;
+    let slideTimer = null;
+
+    function saveState() {
+      localStorage.setItem("porsche_mall_state", JSON.stringify(state));
+    }
+
+    function formatKrw(num) {
+      return "₩ " + Math.round(num).toLocaleString("ko-KR");
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 3200);
+    }
+
+    // 3. Hero Slider Logic
+    function showSlide(idx) {
+      const slides = document.querySelectorAll(".hero-slide");
+      const dots = document.querySelectorAll(".hero-dot");
+      currentSlide = (idx + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle("active", i === currentSlide));
+      dots.forEach((d, i) => d.classList.toggle("active", i === currentSlide));
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+      resetSlideTimer();
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+      resetSlideTimer();
+    }
+
+    function goSlide(idx) {
+      showSlide(idx);
+      resetSlideTimer();
+    }
+
+    function resetSlideTimer() {
+      clearInterval(slideTimer);
+      slideTimer = setInterval(() => showSlide(currentSlide + 1), 5000);
+    }
+
+    // 4. Render Header Member Status & Tiers
+    function renderHeader() {
+      const area = document.getElementById("memberArea");
+      if (state.user) {
+        const tierInfo = TIERS[state.user.tier] || TIERS.SILVER;
+        area.innerHTML = `
+          <div class="member-pill" onclick="openAuthModal()" title="회원 등급 및 포인트 관리">
+            <span class="tier-badge ${state.user.tier}">${tierInfo.name}</span>
+            <span style="font-weight:700; color:#F8FAFC;">${state.user.name}</span>
+            <span style="color:#60A5FA; font-weight:800;">${state.user.points.toLocaleString("ko-KR")} P</span>
+          </div>
+        `;
+      } else {
+        area.innerHTML = `
+          <button class="btn btn-outline" onclick="openAuthModal()">로그인 / 회원가입</button>
+        `;
+      }
+      document.getElementById("cartCount").textContent = state.cart.length;
+      document.getElementById("vaultCount").textContent = state.unlockedBooks.length;
+    }
+
+    function renderTiers() {
+      const grid = document.getElementById("tierGrid");
+      const activeKey = state.user ? state.user.tier : "";
+      grid.innerHTML = Object.entries(TIERS).map(([key, t]) => `
+        <div class="tier-card ${key === activeKey ? 'active-tier' : ''}">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="tier-badge ${key}">${t.name}</span>
+            ${key === activeKey ? '<span style="font-size:0.74rem; color:#60A5FA; font-weight:700;">● 현재 내 등급</span>' : ''}
+          </div>
+          <div class="tier-rate">${t.rateLabel} <span style="font-size:0.85rem; color:var(--text-secondary); font-weight:500;">포인트 적립</span></div>
+          <p style="font-size:0.78rem; color:var(--text-muted);">
+            누적 기준: ${t.minSpent === 0 ? '신규 가입 회원' : formatKrw(t.minSpent) + ' 이상'}
+          </p>
+          <ul class="tier-perks">
+            ${t.perks.map(p => `<li>${p}</li>`).join("")}
+          </ul>
+        </div>
+      `).join("");
+    }
+
+    // 5. Render Cars with Signature Blended Porsche-Crest KRW Price Tag
+    function setCategory(cat, btn) {
+      currentCategory = cat;
+      document.querySelectorAll(".filter-tab").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      renderCars();
+    }
+
+    function renderCars() {
+      const sortVal = document.getElementById("sortSelect").value;
+      const tierRate = state.user ? (TIERS[state.user.tier]?.rate || 0.01) : 0.01;
+
+      let list = CARS.filter(c => currentCategory === "ALL" || c.series === currentCategory);
+      if (sortVal === "price-asc") list.sort((a, b) => a.priceKrw - b.priceKrw);
+      if (sortVal === "price-desc") list.sort((a, b) => b.priceKrw - a.priceKrw);
+      if (sortVal === "power-desc") list.sort((a, b) => parseInt(b.power.replace(/,/g, "")) - parseInt(a.power.replace(/,/g, "")));
+
+      const grid = document.getElementById("carGrid");
+      grid.innerHTML = list.map(car => {
+        const estPoints = Math.round(car.priceKrw * tierRate).toLocaleString("ko-KR");
+        return `
+          <article class="car-card">
+            <div class="car-media">
+              <span class="car-series-pill">${car.seriesLabel}</span>
+              <img src="${car.img}" alt="${car.name}" loading="lazy" />
+            </div>
+
+            <!-- Porsche Official Mark on Left + Seamless Blended KRW Price Tag -->
+            <div class="porsche-price-tag">
+              <div class="crest-wrap" title="Porsche Official Crest">
+                <svg width="32" height="40" viewBox="0 0 100 120">
+                  <use href="#porsche-crest-svg"></use>
+                </svg>
+              </div>
+              <div class="price-divider"></div>
+              <div class="price-info">
+                <div class="price-label-row">
+                  <span class="price-caption">권장소비자가격 (KRW)</span>
+                  <span class="price-points-pill">+${estPoints} P 적립</span>
+                </div>
+                <div class="price-krw-main">${formatKrw(car.priceKrw)}</div>
+                <div class="price-krw-sub">${car.priceKoreanUnit} · VAT 포함</div>
+              </div>
+            </div>
+
+            <div class="car-body">
+              <h3 class="car-name">${car.name}</h3>
+              <p class="car-tagline">${car.tagline}</p>
+
+              <div class="spec-strip">
+                <div class="spec-item">
+                  <div class="spec-val">${car.power}</div>
+                  <div class="spec-lbl">최고출력</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-val">${car.zeroToHundred}</div>
+                  <div class="spec-lbl">0-100 km/h</div>
+                </div>
+                <div class="spec-item">
+                  <div class="spec-val">${car.topSpeed}</div>
+                  <div class="spec-lbl">최고속도</div>
+                </div>
+              </div>
+
+              <div class="car-actions">
+                <button class="btn btn-outline" onclick="openSpecModal(${car.id})">상세 스펙</button>
+                <button class="btn btn-royal" onclick="addToCart(${car.id})">차고에 담기</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    // 6. Vehicle Detail Spec Modal
+    function openSpecModal(carId) {
+      const car = CARS.find(c => c.id === carId);
+      if (!car) return;
+      const box = document.getElementById("specModalContent");
+      box.innerHTML = `
+        <button class="modal-close" onclick="closeModal('specModal')">✕</button>
+        <div style="border-radius:14px; overflow:hidden; margin-bottom:14px; position:relative;">
+          <img src="${car.img}" alt="${car.name}" style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block;" />
+        </div>
+        <div class="porsche-price-tag" style="margin:-38px 12px 18px 12px;">
+          <div class="crest-wrap">
+            <svg width="32" height="40" viewBox="0 0 100 120"><use href="#porsche-crest-svg"></use></svg>
+          </div>
+          <div class="price-divider"></div>
+          <div class="price-info">
+            <span class="price-caption">PORSCHE KOREA OFFICIAL PRICE</span>
+            <div class="price-krw-main">${formatKrw(car.priceKrw)} <span style="font-size:0.85rem; font-weight:500; color:#93C5FD;">(${car.priceKoreanUnit})</span></div>
+          </div>
+        </div>
+        <h3 style="font-size:1.45rem; font-weight:800; margin-bottom:6px;">${car.name}</h3>
+        <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:16px;">${car.tagline}</p>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; background:rgba(6,11,25,0.75); padding:16px; border-radius:12px; border:1px solid var(--border-subtle); font-size:0.85rem; margin-bottom:16px;">
+          <div><span style="color:var(--text-muted);">파워트레인:</span><br/><strong>${car.engine}</strong></div>
+          <div><span style="color:var(--text-muted);">변속기 / 구동:</span><br/><strong>${car.transmission}</strong></div>
+          <div><span style="color:var(--text-muted);">최고출력:</span><br/><strong style="color:#60A5FA;">${car.power}</strong></div>
+          <div><span style="color:var(--text-muted);">0-100 km/h / 최고속:</span><br/><strong>${car.zeroToHundred} / ${car.topSpeed}</strong></div>
+        </div>
+
+        <div style="background:rgba(29,78,216,0.14); border:1px solid var(--border-royal); border-radius:12px; padding:14px; font-size:0.83rem; margin-bottom:18px;">
+          <strong style="color:#93C5FD;">✦ 결제 즉시 배포 디지털 오너스 매뉴얼 포함:</strong>
+          <p style="color:#CBD5E1; margin-top:4px;">${car.ebookSummary}</p>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+          <button class="btn btn-outline" style="flex:1;" onclick="closeModal('specModal')">닫기</button>
+          <button class="btn btn-royal" style="flex:2;" onclick="closeModal('specModal'); addToCart(${car.id}); toggleCart(true);">
+            차고에 담고 예약/결제하기
+          </button>
+        </div>
+      `;
+      document.getElementById("specModal").classList.add("open");
+    }
+
+    // 7. Cart & Point Calculation Logic
+    function addToCart(carId) {
+      if (!state.cart.includes(carId)) {
+        state.cart.push(carId);
+        saveState();
+        renderHeader();
+        renderCart();
+        const car = CARS.find(c => c.id === carId);
+        showToast(`✦ ${car.name} 모델이 차고에 담겼습니다.`);
+      } else {
+        toggleCart(true);
+      }
+    }
+
+    function removeFromCart(carId) {
+      state.cart = state.cart.filter(id => id !== carId);
+      saveState();
+      renderHeader();
+      renderCart();
+    }
+
+    function toggleCart(open) {
+      document.getElementById("cartDrawer").classList.toggle("open", open);
+      document.getElementById("drawerBackdrop").classList.toggle("open", open);
+      if (open) renderCart();
+    }
+
+    function setPayMode(mode) {
+      state.payMode = mode;
+      document.getElementById("modeDeposit").classList.toggle("active", mode === "deposit");
+      document.getElementById("modeFull").classList.toggle("active", mode === "full");
+      saveState();
+      updateCartSummary();
+    }
+
+    function renderCart() {
+      const container = document.getElementById("cartItemsContainer");
+      if (state.cart.length === 0) {
+        container.innerHTML = `
+          <div style="text-align:center; padding:48px 16px; color:var(--text-secondary);">
+            <p style="font-size:1rem; font-weight:700; color:#F8FAFC; margin-bottom:6px;">차고가 비어 있습니다</p>
+            <p style="font-size:0.84rem;">원하시는 포르쉐 모델을 선택해 담아보세요.</p>
+          </div>
+        `;
+      } else {
+        container.innerHTML = state.cart.map(id => {
+          const car = CARS.find(c => c.id === id);
+          return `
+            <div class="cart-item">
+              <img src="${car.img}" alt="${car.name}" />
+              <div style="flex:1; min-width:0;">
+                <div style="font-size:0.92rem; font-weight:800; color:#FFFFFF;">${car.name}</div>
+                <div style="display:flex; align-items:center; gap:6px; margin-top:4px;">
+                  <svg width="14" height="17" viewBox="0 0 100 120"><use href="#porsche-crest-svg"></use></svg>
+                  <span style="font-size:0.84rem; font-weight:700; color:#93C5FD;">${formatKrw(car.priceKrw)}</span>
+                </div>
+              </div>
+              <button class="btn btn-outline" style="padding:5px 10px; font-size:0.75rem;" onclick="removeFromCart(${car.id})">삭제</button>
+            </div>
+          `;
+        }).join("");
+      }
+      updateCartSummary();
+    }
+
+    function getCheckoutNumbers() {
+      const rawTotal = state.cart.reduce((sum, id) => {
+        const c = CARS.find(item => item.id === id);
+        return sum + (c ? c.priceKrw : 0);
+      }, 0);
+      const baseAmount = state.payMode === "deposit" ? Math.round(rawTotal * 0.1) : rawTotal;
+      const availPts = state.user ? state.user.points : 0;
+      const inputEl = document.getElementById("usePointsInput");
+      let usedPts = parseInt(inputEl?.value || "0", 10) || 0;
+      if (usedPts < 0) usedPts = 0;
+      if (usedPts > availPts) usedPts = availPts;
+      if (usedPts > baseAmount) usedPts = baseAmount;
+      if (inputEl && Number(inputEl.value) !== usedPts && inputEl.value !== "") {
+        inputEl.value = usedPts;
+      }
+      const finalPay = Math.max(0, baseAmount - usedPts);
+      const tierInfo = state.user ? (TIERS[state.user.tier] || TIERS.SILVER) : TIERS.SILVER;
+      const earnPts = Math.round(finalPay * tierInfo.rate);
+      return { rawTotal, baseAmount, usedPts, finalPay, earnPts, tierInfo };
+    }
+
+    function applyAllPoints() {
+      if (!state.user) {
+        showToast("로그인 후 포인트를 사용할 수 있습니다.");
+        return;
+      }
+      const { baseAmount } = getCheckoutNumbers();
+      const maxUse = Math.min(state.user.points, baseAmount);
+      document.getElementById("usePointsInput").value = maxUse;
+      updateCartSummary();
+    }
+
+    function updateCartSummary() {
+      const availPts = state.user ? state.user.points : 0;
+      document.getElementById("availablePointsLabel").textContent = availPts.toLocaleString("ko-KR") + " P 보유";
+      const { baseAmount, usedPts, finalPay, earnPts, tierInfo } = getCheckoutNumbers();
+      document.getElementById("subtotalText").textContent = formatKrw(baseAmount);
+      document.getElementById("discountText").textContent = "- " + formatKrw(usedPts);
+      document.getElementById("finalTotalText").textContent = formatKrw(finalPay);
+      document.getElementById("earnRateText").textContent = tierInfo.rateLabel;
+      document.getElementById("earnPointsText").textContent = "+ " + earnPts.toLocaleString("ko-KR") + " P";
+    }
+
+    // 8. Checkout & Instant Digital E-Book Deployment
+    function openCheckoutModal() {
+      if (state.cart.length === 0) {
+        showToast("결제할 차량을 먼저 차고에 담아주세요.");
+        return;
+      }
+      if (!state.user) {
+        toggleCart(false);
+        openAuthModal();
+        showToast("결제 및 포인트 적립을 위해 먼저 로그인/회원가입을 진행해주세요.");
+        return;
+      }
+      const { finalPay, earnPts } = getCheckoutNumbers();
+      document.getElementById("chkPayMode").textContent = state.payMode === "deposit" ? "차량 예약 계약금 (10%)" : "차량 일시불 완납 (100%)";
+      document.getElementById("chkFinalKrw").textContent = formatKrw(finalPay);
+      document.getElementById("chkEarnPts").textContent = "+ " + earnPts.toLocaleString("ko-KR") + " P 즉시 적립";
+      toggleCart(false);
+      document.getElementById("checkoutModal").classList.add("open");
+    }
+
+    function completePayment() {
+      const { usedPts, finalPay, earnPts } = getCheckoutNumbers();
+      const payMethod = document.getElementById("payMethod").value;
+      const center = document.getElementById("deliveryCenter").value;
+      const now = new Date();
+      const dateStr = `${now.getFullYear()}.${String(now.getMonth()+1).padStart(2,"0")}.${String(now.getDate()).padStart(2,"0")}`;
+
+      // Update user points & cumulative spend
+      state.user.points = state.user.points - usedPts + earnPts;
+      state.user.totalSpent = (state.user.totalSpent || 0) + finalPay;
+
+      // Auto-upgrade tier based on totalSpent
+      if (state.user.totalSpent >= 500000000) state.user.tier = "VIP";
+      else if (state.user.totalSpent >= 300000000) state.user.tier = "PLATINUM";
+      else if (state.user.totalSpent >= 100000000) state.user.tier = "ROYAL";
+
+      // Instantly unlock & deploy Digital Owner's Manual & Order Certificate for each purchased car
+      let newestBookId = null;
+      state.cart.forEach(carId => {
+        const car = CARS.find(c => c.id === carId);
+        const bookRecord = {
+          uid: "BK-" + Date.now() + "-" + car.id,
+          carId: car.id,
+          carName: car.name,
+          seriesLabel: car.seriesLabel,
+          img: car.img,
+          ownerName: state.user.name,
+          priceKrw: car.priceKrw,
+          paidAmount: state.payMode === "deposit" ? Math.round(car.priceKrw * 0.1) : car.priceKrw,
+          payTypeLabel: state.payMode === "deposit" ? "공식 계약금(10%) 결제 완료" : "차량 전액 일시불 결제 완료",
+          payMethod,
+          center,
+          issuedDate: dateStr,
+          vinCode: "WP0ZZZ99ZTS" + Math.floor(100000 + Math.random() * 900000)
+        };
+        state.unlockedBooks.unshift(bookRecord);
+        newestBookId = bookRecord.uid;
+      });
+
+      state.cart = [];
+      document.getElementById("usePointsInput").value = "";
+      saveState();
+
+      closeModal("checkoutModal");
+      renderHeader();
+      renderTiers();
+      renderCars();
+      renderVault();
+
+      showToast(`🎉 결제 완료! +${earnPts.toLocaleString("ko-KR")} P 적립 및 디지털 북이 즉시 배포되었습니다.`);
+      if (newestBookId) {
+        openDigitalReader(newestBookId);
+      }
+    }
+
+    // 9. Render Digital Vault & Interactive Multi-Page E-Book Reader
+    function renderVault() {
+      const grid = document.getElementById("vaultGrid");
+      if (state.unlockedBooks.length === 0) {
+        grid.innerHTML = `
+          <div class="vault-empty">
+            <p style="font-size:1.05rem; font-weight:700; color:#F8FAFC; margin-bottom:8px;">아직 발급된 디지털 오너스 북이 없습니다</p>
+            <p style="font-size:0.86rem; margin-bottom:16px;">차량 계약 또는 결제를 완료하면 공식 디지털 매뉴얼과 오더 인증서가 이곳에 즉시 배포되어 바로 열람할 수 있습니다.</p>
+            <a href="#models" class="btn btn-royal">슈퍼카 라인업 둘러보기</a>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = state.unlockedBooks.map(book => `
+        <div class="vault-card">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span class="tier-badge ROYAL">INSTANT E-BOOK</span>
+            <span style="font-size:0.75rem; color:var(--text-muted);">${book.issuedDate} 발급</span>
+          </div>
+          <img src="${book.img}" alt="${book.carName}" style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:10px;" />
+          <div>
+            <h4 style="font-size:1.08rem; font-weight:800; color:#FFFFFF;">${book.carName} 오너스 매뉴얼</h4>
+            <p style="font-size:0.8rem; color:#93C5FD; margin-top:2px;">${book.payTypeLabel} · ${book.center}</p>
+            <p style="font-size:0.75rem; color:var(--text-muted); margin-top:4px;">배정 차대번호(VIN): ${book.vinCode}</p>
+          </div>
+          <button class="btn btn-royal" style="width:100%; margin-top:auto;" onclick="openDigitalReader('${book.uid}')">
+            디지털 북 &amp; 인증서 즉시 열람하기
+          </button>
+        </div>
+      `).join("");
+    }
+
+    function openDigitalReader(uid, tabIdx = 0) {
+      const book = state.unlockedBooks.find(b => b.uid === uid);
+      if (!book) return;
+      const car = CARS.find(c => c.id === book.carId) || CARS[0];
+
+      const pages = [
+        `
+          <div class="ebook-page">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(212,175,55,0.3); padding-bottom:14px; margin-bottom:16px;">
+              <div style="display:flex; align-items:center; gap:10px;">
+                <svg width="30" height="36" viewBox="0 0 100 120"><use href="#porsche-crest-svg"></use></svg>
+                <div>
+                  <div style="font-size:0.72rem; letter-spacing:0.15em; color:#D4AF37; font-weight:800;">PORSCHE OFFICIAL CERTIFICATE</div>
+                  <div style="font-size:1.05rem; font-weight:800; color:#FFFFFF;">공식 차량 오더 및 디지털 오너 인증서</div>
+                </div>
+              </div>
+              <span class="tier-badge VIP">VERIFIED</span>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:0.86rem;">
+              <div><span style="color:var(--text-muted);">오너 성함:</span><br/><strong>${book.ownerName} 님</strong></div>
+              <div><span style="color:var(--text-muted);">발급 일자:</span><br/><strong>${book.issuedDate}</strong></div>
+              <div><span style="color:var(--text-muted);">계약 모델:</span><br/><strong style="color:#60A5FA;">${book.carName}</strong></div>
+              <div><span style="color:var(--text-muted);">배정 VIN 코드:</span><br/><strong>${book.vinCode}</strong></div>
+              <div><span style="color:var(--text-muted);">차량 권장소비자가:</span><br/><strong>${formatKrw(book.priceKrw)}</strong></div>
+              <div><span style="color:var(--text-muted);">결제 상태 / 센터:</span><br/><strong>${book.payTypeLabel} (${book.center})</strong></div>
+            </div>
+            <p style="margin-top:16px; padding-top:12px; border-top:1px solid rgba(148,163,184,0.16); font-size:0.8rem; color:#94A3B8;">
+              본 디지털 인증서는 포르쉐 익스클루시브 온라인 스토어 결제 완료와 동시에 자동 발급되었으며, 지정 포르쉐 센터에서 실차 인도 및 VIP 컨시어지 패스로 즉시 사용 가능합니다.
+            </p>
+          </div>
+        `,
+        `
+          <div class="ebook-page">
+            <h4 style="font-size:1.05rem; font-weight:800; color:#93C5FD; margin-bottom:10px;">CHAPTER 01. 엔지니어링 &amp; 파워트레인 기술 매뉴얼</h4>
+            <p style="font-size:0.88rem; line-height:1.7; margin-bottom:14px;">${car.ebookSummary}</p>
+            <div style="background:rgba(5,9,20,0.65); padding:14px; border-radius:10px; font-size:0.84rem; display:grid; gap:8px;">
+              <div>• <strong>엔진 아키텍처:</strong> ${car.engine}</div>
+              <div>• <strong>트랜스미션:</strong> ${car.transmission}</div>
+              <div>• <strong>퍼포먼스 제원:</strong> 최고출력 ${car.power} / 0-100km/h ${car.zeroToHundred} / 최고속도 ${car.topSpeed}</div>
+            </div>
+          </div>
+        `,
+        `
+          <div class="ebook-page">
+            <h4 style="font-size:1.05rem; font-weight:800; color:#93C5FD; margin-bottom:10px;">CHAPTER 02. 초기 길들이기 및 서킷 케어 가이드</h4>
+            <ul style="padding-left:18px; font-size:0.86rem; line-height:1.8; color:#CBD5E1;">
+              <li><strong>초기 1,500 km 주행 권장사항:</strong> 엔진 오일 온도가 80°C 이상 도달한 이후 고회전 영역을 사용하시기 바랍니다.</li>
+              <li><strong>타이어 공기압 및 웜업:</strong> 트랙 주행 전 냉간 공기압을 기준치 대비 -0.3 bar 설정 후 2랩 웜업을 권장합니다.</li>
+              <li><strong>포르쉐 커넥트(Porsche Connect):</strong> 배정된 VIN 코드(<strong>${book.vinCode}</strong>)를 앱에 등록하면 실시간 차량 상태 모니터링이 활성화됩니다.</li>
+            </ul>
+          </div>
+        `
+      ];
+
+      document.getElementById("readerModalBody").innerHTML = `
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="tier-badge ROYAL">DIGITAL E-BOOK READER</span>
+          <h3 style="font-size:1.15rem; font-weight:800;">${book.carName} 디지털 오너스 북</h3>
+        </div>
+        <div class="ebook-tabs">
+          <button class="ebook-tab ${tabIdx === 0 ? 'active' : ''}" onclick="openDigitalReader('${uid}', 0)">1. 공식 오더 인증서</button>
+          <button class="ebook-tab ${tabIdx === 1 ? 'active' : ''}" onclick="openDigitalReader('${uid}', 1)">2. 엔지니어링 스펙 북</button>
+          <button class="ebook-tab ${tabIdx === 2 ? 'active' : ''}" onclick="openDigitalReader('${uid}', 2)">3. 트랙 &amp; 메인터넌스</button>
+        </div>
+        ${pages[tabIdx]}
+      `;
+      document.getElementById("readerModal").classList.add("open");
+    }
+
+    function scrollToVault() {
+      document.getElementById("digital-vault").scrollIntoView({ behavior: "smooth" });
+    }
+
+    // 10. Auth Modal Logic
+    function openAuthModal() {
+      const loggedIn = Boolean(state.user);
+      document.getElementById("authLoggedInView").style.display = loggedIn ? "block" : "none";
+      document.getElementById("authForm").style.display = loggedIn ? "none" : "block";
+      if (loggedIn) {
+        document.getElementById("profileName").textContent = state.user.name;
+        document.getElementById("profileEmail").textContent = state.user.email;
+        document.getElementById("profileTier").textContent = TIERS[state.user.tier]?.name || state.user.tier;
+        document.getElementById("profilePoints").textContent = state.user.points.toLocaleString("ko-KR") + " P";
+        document.getElementById("profileSpent").textContent = formatKrw(state.user.totalSpent || 0);
+      }
+      document.getElementById("authModal").classList.add("open");
+    }
+
+    function handleRegister(e) {
+      e.preventDefault();
+      const name = document.getElementById("regName").value.trim();
+      const email = document.getElementById("regEmail").value.trim();
+      const tier = document.getElementById("regTier").value;
+      state.user = {
+        name,
+        email,
+        tier,
+        points: 1500000,
+        totalSpent: 0
+      };
+      saveState();
+      closeModal("authModal");
+      renderHeader();
+      renderTiers();
+      renderCars();
+      showToast(`✦ ${name}님 환영합니다! 가입 축하 1,500,000 P가 지급되었습니다.`);
+    }
+
+    function logoutUser() {
+      state.user = null;
+      saveState();
+      closeModal("authModal");
+      renderHeader();
+      renderTiers();
+      renderCars();
+      showToast("로그아웃 되었습니다.");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("open");
+    }
+
+    // Initialize Application
+    window.addEventListener("DOMContentLoaded", () => {
+      renderHeader();
+      renderTiers();
+      renderCars();
+      renderVault();
+      resetSlideTimer();
+    });
+  </script>
+</body>
+</html>
